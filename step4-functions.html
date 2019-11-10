@@ -37,10 +37,14 @@
            return num;
        };
         
-        console.log(adder(5));// NaN
-        console.log(adder(5,6));// NaN
-        console.log(adder(5,6,7));// NaN
-        console.log(adder(5,6,7,8));// NaN
+        // console.log(adder(5));// NaN
+        // console.log(adder(5,6));// NaN
+        // console.log(adder(5,6,7));// NaN
+        var arr = [5,6,7,8]
+        console.log(adder(arr));// NaN
+        console.log(adder(arr[0], arr[1], arr[2], arr[3]));// NaN
+        // SPREAD PARAMETER
+        console.log(adder(...arr));// NaN
     </script>
 </head>
 <body>
