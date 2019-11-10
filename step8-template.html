@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var heroes = [{
+            title : "Batman",
+            firstname : "Bruce",
+            lastname : "Wayne",
+            photo : "images/batman.jpg",
+            },
+            {
+            title : "Superman",
+            firstname : "Clark",
+            lastname : "Kent",
+            photo : "images/superman.jpg",
+            },
+            {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            photo : "images/ironman.jpg",
+            },
+            {
+            title : "Antman",
+            firstname : "Scott",
+            lastname : "lang",
+            photo : "images/antman.jpg",
+            }];
+            document.addEventListener("DOMContentLoaded", function(){
+                document.getElementsByClassName("container")[0].innerHTML += '<h1>Batman</h1> <h2>Bruce Wayne</h2> <img src="images/batman.jpg" alt="batman" width="200">'
+            });
+
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
