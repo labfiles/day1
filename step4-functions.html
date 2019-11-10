@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // function adder(num1, num2){
+        //     var localnumber1 = num1 || 0;
+        //     var localnumber2 = num2 || 0;
+        //     return localnumber1 + localnumber2
+        // };
+        // DEFAULT PARAMETER
+        /*
+        function adder(num1 = 0 , num2 = 0){
+            return num1 + num2
+        };
+        
+        console.log(adder(5));// NaN
+       */
+      /*
+      function adder(){
+          let num = 0;
+          for(let i = 0; i< arguments.length; i++){
+              num += arguments[i]
+            }
+            return num;
+      };
+        */
+       // REST Operator
+       function adder(...nums){
+           let num = 0;
+           for(let i = 0; i< nums.length; i++){
+               num += nums[i]
+           }
+           return num;
+       };
+        
+        console.log(adder(5));// NaN
+        console.log(adder(5,6));// NaN
+        console.log(adder(5,6,7));// NaN
+        console.log(adder(5,6,7,8));// NaN
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
