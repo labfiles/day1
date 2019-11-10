@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script id="temp" type="template/mustache">
+            <div class="box">
+            <h1>{{title}}</h1> 
+            <h2>{{firstname}} {{lastname}}</h2> 
+            <img src="{{photo}}" alt="{{title}}" width="200">
+            </div>
+    </script>
+    <style>
+        .box{
+            width: 210px;
+            background-color: gainsboro;
+            border : 1px solid slategray;
+            margin: 10px;
+            float: left;
+        }
+        h1, h2{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            background-color: darkgrey;
+            text-align: center;
+            margin: 5px;
+        }
+    </style>
     <script>
         var heroes = [{
             title : "Batman",
@@ -30,9 +53,26 @@
             lastname : "lang",
             photo : "images/antman.jpg",
             }];
-            document.addEventListener("DOMContentLoaded", function(){
-                document.getElementsByClassName("container")[0].innerHTML += '<h1>Batman</h1> <h2>Bruce Wayne</h2> <img src="images/batman.jpg" alt="batman" width="200">'
-            });
+        document.addEventListener("DOMContentLoaded", function(){
+           for(let i = 0; i < heroes.length; i++){
+               /*
+               document.getElementsByClassName("container")[0].innerHTML += `
+               <div class="box">
+                <h1>${ heroes[i].title.toUppercase() }</h1> 
+                <h2>${ heroes[i].firstname+' '+heroes[i].lastname }</h2> 
+                <img src="${ heroes[i].photo }" alt="${ heroes[i].title }" width="200">
+                </div>
+                `
+            }
+               */
+
+            // document.getElementsByClassName("container")[0].innerHTML = ;
+            document.getElementsByClassName("container")[0].innerHTML += document.getElementById("temp").innerHTML
+            .replace("{{title}}", heroes[i].title)
+            .replace("{{firstname}}",  heroes[i].firstname)
+            .replace("{{lastname}}",  heroes[i].lastname)
+            .replace("{{photo}}",  heroes[i].photo);
+        }});
 
     </script>
 </head>
