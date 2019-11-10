@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let cart = {
+            getcostprice : function(){
+                return 100
+            },
+            getsellingprice : function(){
+                // let scope = this;
+                /*
+                let calculateprofit = function(scope){
+                    return scope.getcostprice() * 0.2
+                }
+                */
+                let calculateprofit = ()=>{
+                    return this.getcostprice() * 0.2
+                };
+                // return calculateprofit(this) + this.getcostprice()
+                // return calculateprofit.call(this) + this.getcostprice()
+                // return calculateprofit.apply(this) + this.getcostprice()
+                // return calculateprofit.bind(this)() + this.getcostprice()
+                 return calculateprofit() + this.getcostprice()
+            }
+        };
+        console.log(cart.getsellingprice());// 120 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

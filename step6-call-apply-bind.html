@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+         var batman = {
+            firstname : "Bruce",
+            lastname : "Wayne",
+            fullname : function(message, city){
+                return this.firstname+" "+this.lastname+" says "+message +" from "+city
+            }
+        };
+        var superman = {
+            firstname : "Clark",
+            lastname : "Kent",
+        };
+         var spiderman = {
+            firstname : "Peter",
+            lastname : "Parker"
+        };
+        
+        console.log(batman.fullname());// Bruce Wayne
+        console.log(batman.fullname.call(superman,"Hello", "Metropolis"));// Clark Kent
+        console.log(batman.fullname.apply(superman,["Hello", "Metropolis"]));// Clark Kent
+        console.log(batman.fullname.bind(superman)("Hello", "Metropolis"));// Clark Kent
+
+        /*
+        var hero = batman.fullname.bind(superman);
+        
+        console.log(hero());// Clark Kent
+       */ 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
